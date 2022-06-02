@@ -1,0 +1,36 @@
+$base-color: #777;
+$second-color: #333;
+$heading-font: Arial;
+@mixin ninja($link, $visit, $hover, $active) {
+    a {
+        color: $link;
+        &:visited {
+            color: $visit;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+    }
+}
+
+.element {
+    width: 100px;
+    height: 100px;
+    background: black;
+    p {
+        color: $second-color;
+    }
+}
+
+.link {
+    color: $second-color;
+    font-size: 12px;
+}
+
+.heading {
+    font-family: $heading-font;
+    @include ninja (blue, red, pink, purple)
+}
